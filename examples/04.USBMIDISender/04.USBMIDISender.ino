@@ -19,7 +19,7 @@ JabaraMIDI::Sensors<decltype(inside), decltype(outside)> sensors(inside, outside
 JabaraMIDI::Calibrator<SAMPLES_PER_SECOND> calibrator;
 
 JabaraMIDI::Config config;
-JabaraMIDI::USBMIDIHelper usbMIDI("Jabara MIDI");
+JabaraMIDI::USBMIDIHelper usbMIDI("JabaraMIDI Lib");
 JabaraMIDI::Processor processor(config, [](JabaraMIDI::Config& config, int value) {
   usbMIDI->sendControlChange(config.midiControlNumber, value, config.midiChannel + 1);
 });
