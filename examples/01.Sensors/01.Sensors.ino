@@ -26,7 +26,7 @@ static void halt() {
 }
 
 void setup() {
-  Serial.begin();
+  Serial.begin(115200);
   Wire.begin(SDA_PIN, SCL_PIN);
 
   if (!sensors.begin()) {

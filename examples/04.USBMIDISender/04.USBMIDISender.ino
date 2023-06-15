@@ -19,7 +19,7 @@ JabaraMIDI::Sensors<decltype(inside), decltype(outside)> sensors(inside, outside
 JabaraMIDI::Calibrator<SAMPLES_PER_SECOND> calibrator;
 
 JabaraMIDI::Config config;
-JabaraMIDI::USBMIDIHelper usbMIDI("Jabara MIDI");
+JabaraMIDI::USBMIDIHelper usbMIDI("JabaraMIDI Lib");
 JabaraMIDI::Processor processor(config, [](JabaraMIDI::Config& config, int value) {
   usbMIDI->sendControlChange(config.midiControlNumber, value, config.midiChannel + 1);
 });
@@ -33,7 +33,7 @@ static void halt() {
 }
 
 void setup() {
-  Serial.begin();
+  Serial.begin(115200);
   Wire.begin(SDA_PIN, SCL_PIN);
 
   if (!sensors.begin()) {

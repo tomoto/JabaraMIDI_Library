@@ -1,5 +1,7 @@
 #pragma once
 #include <Arduino.h>
+// depends on Adafruit BMP280 Library
+// https://github.com/adafruit/Adafruit_BMP280_Library
 #include <Adafruit_BMP280.h>
 
 namespace JabaraMIDI {
