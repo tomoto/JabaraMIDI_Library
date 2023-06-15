@@ -6,4 +6,6 @@
   * V3: To be written
 
 * BME280/BMP280/BMP3XX sensors are supported.
-  You need to manually install the libraries from Adafruit for the sensors you use. See JabaraMIDI_Sensor_[sensor type].h.
+  You need to manually install the libraries from Adafruit for your sensors. See JabaraMIDI_Sensor_[sensor type].h.
+
+* I intentionally wrote all the code in the header files to see how smartly the modern C++ compilers handle them in this template library era. Currently, I do not see any drawbacks. Actually, the binary gets slightly smaller, which was a nice surprise.
