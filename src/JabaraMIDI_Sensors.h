@@ -37,7 +37,7 @@ private:
       Serial.printf("Failed to initialize sensor %s.\n", name);
       return false;
     }
-    Serial.printf("BME280 %s initialized.\n", name);
+    Serial.printf("Sensor %s initialized.\n", name);
     return true;
   }
 };
