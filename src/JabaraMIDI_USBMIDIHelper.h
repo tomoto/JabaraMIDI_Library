@@ -33,11 +33,12 @@ struct USBMIDIHelper {
   MidiInterface* operator->() { return &midi; }
 
   void begin(midi::Channel channelToListen = MIDI_CHANNEL_OMNI) {
+    Serial.println("Initializing USB MIDI...");
     midi.begin(channelToListen);
     while (!TinyUSBDevice.mounted()) {
       delay(10);
     }
-    Serial.println("USB MIDI initialized");
+    Serial.println("USB MIDI initialized.");
   }
 };
 

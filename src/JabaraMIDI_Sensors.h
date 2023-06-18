@@ -33,12 +33,14 @@ public:
 private:
   template<class Sensor>
   bool beginImpl(Sensor& s, const char* name) {
+    Serial.printf("Initializing sensor '%s'...\n", name);
     if (!s.begin()) {
-      Serial.printf("Failed to initialize sensor %s.\n", name);
+      Serial.println("Sensor initialization failed.");
       return false;
+    } else {
+      Serial.println("Sensor initialized.");
+      return true;
     }
-    Serial.printf("Sensor %s initialized.\n", name);
-    return true;
   }
 };
 
